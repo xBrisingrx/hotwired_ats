@@ -2,19 +2,26 @@
   "name": "app",
   "private": true,
   "devDependencies": {
+    "chokidar": "^4.0.1",
     "esbuild": "^0.24.0"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+    "build": "node esbuild.config.mjs",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
+    "build:default": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.12",
     "@tailwindcss/forms": "^0.5.9",
     "autoprefixer": "^10.4.20",
+    "cable_ready": "5.0.5",
+    "esbuild-rails": "^1.0.3",
+    "mrujs": "^1.0.2",
     "postcss": "^8.4.47",
     "postcss-import": "^16.1.0",
+    "stimulus": "npm:@hotwired/stimulus",
+    "stimulus_reflex": "3.5.2",
     "tailwindcss": "^3.4.14"
   }
 }

@@ -52,3 +52,7 @@ group :development do
   gem "web-console"
 end
 
+
+gem "stimulus_reflex", "~> 3.5"
+
+gem "redis-session-store", "~> 0.11.5"
